@@ -12,7 +12,7 @@ export default {
 			inter: [ "Inter", ...defaultTheme.fontFamily.sans],
 		},
 		container: {
-			center: true,
+			center: true
 		},	  
 		extend: {
 			colors: {

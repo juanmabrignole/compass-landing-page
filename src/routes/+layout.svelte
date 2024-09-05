@@ -26,12 +26,12 @@
 </script>
 
 <SEO
-title="Krak Real Estate | Bienes Raíces"
+title="Agentes | Krak Real Estate"
 description="Comercializamos bienes raíces de una manera diferente."
 canonical="https://www.krak.com.ar/"
 keywords="real estate, marketing"
 openGraph={{
-  title: "Krak Real Estate | Bienes Raíces",
+  title: "Agentes | Krak Real Estate",
   description: "Comercializamos bienes raíces de una manera diferente.",
   //@ts-ignore
   image: "https://www.krak.com.ar/og.jpg",
@@ -52,7 +52,7 @@ openGraph={{
     </div>
 </header>
 
-<main class="min-h-[calc(100svh-5rem)] flex flex-col">
+<main class="min-h-[calc(100svh-5rem)] flex flex-col font-inter">
     <slot />
 </main>
 
@@ -81,10 +81,10 @@ openGraph={{
             <h2 class="uppercase text-sm mb-8">Suscribite al newsletter</h2>
             <div class="block group-then:hidden">
                 <label class="text-gray-500 mb-2 relative flex group-await:opacity-50">
-                    <input class="peer pt-5 pb-1 px-4 w-full font-semibold" type="email" placeholder="" maxlength="255" name="email" required> 
+                    <input class="rounded-lg peer pt-5 pb-1 px-4 w-full font-semibold" type="email" placeholder="" maxlength="255" name="email" required> 
                     <span class="absolute peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-gray-500 peer-placeholder-shown:text-base peer-focus:text-xs peer-focus:top-1.5 peer-focus:text-gray-500 text-gray-500 text-xs left-4 top-1.5 transition-all">Email</span>
                 </label>
-                <button class="ml-auto text-black group/button px-4 py-3 bg-white hover:bg-blue-300 group-await:bg-blue-300 font-semibold *:overflow-hidden flex items-center justify-center" type="submit">
+                <button class="ml-auto text-black group/button px-4 py-3 bg-white hover:bg-blue-300 rounded-lg group-await:bg-blue-300 font-semibold *:overflow-hidden flex items-center justify-center" type="submit">
                     <span class="w-16 group-await:w-0">Enviar</span>
                     <span class="group-await:hidden w-0 group-hover/button:w-6 transition-all text-2xl icon-[mdi--chevron-right]"></span>
                     <span class="icon-[tabler--loader-2] text-2xl w-0 group-await:w-6 group-await:animate-spin"></span>
