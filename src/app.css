@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.grecaptcha-badge { 
+    visibility: hidden !important;
+}
+
 @layer base {
+	html {
+		@apply scroll-smooth
+	}
 	@font-face {
 		font-family: 'Inter';
 		src: url('/fonts/Inter-Black.woff2') format('woff2');
