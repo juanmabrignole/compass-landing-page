@@ -42,8 +42,6 @@ openGraph={{
 
 />
 <svelte:head>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcE9jsqAAAAAOyzMhfoTOA-G0kI6kCxadXeFwME"></script>
-
     <link rel="preload" href="/fonts/Montserrat-Light.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
