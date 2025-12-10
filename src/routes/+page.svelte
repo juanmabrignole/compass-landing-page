@@ -1,13 +1,13 @@
 <script>
   import { onDestroy } from 'svelte';
 
-  // Countdown hacia el 20 de enero de 2026
+  // Countdown hacia el 15 de enero de 2026
   let days = '00';
   let hours = '00';
   let minutes = '00';
   let seconds = '00';
 
-  const countDownDate = new Date('Jan 20, 2026 00:00:00').getTime();
+  const countDownDate = new Date('Jan 15, 2026 00:00:00').getTime();
 
   const countdownFunction = setInterval(() => {
     const now = new Date().getTime();
@@ -58,59 +58,71 @@
   <meta name="description" content="Inscríbete a la masterclass exclusiva para agentes de Krak Real Estate con Marcelo Napolitano." />
 </svelte:head>
 
-<!-- Hero -->
-<section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+<!-- Hero con fondo azul -->
+<section class="py-24 px-4 sm:px-6 lg:px-8 bg-[#08407C]">
   <div class="max-w-4xl mx-auto text-center">
-    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-gray-900 font-inter leading-tight">Masterclass de Krak Real Estate con Marcelo Napolitano</h1>
-    <p class="text-2xl text-gray-700 mb-10 font-inter max-w-3xl mx-auto">Aprende las estrategias más efectivas para cerrar propiedades más rápido y generar confianza con tus clientes.</p>
-    <a href="#formulario" class="inline-block bg-[#08407C] hover:bg-[#396696] text-white font-bold text-lg py-4 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">🎯 Inscribite acá sin cargo</a>
+    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white font-inter leading-tight">Masterclass de Krak Real Estate con Marcelo Napolitano</h1>
+    <p class="text-2xl text-gray-200 mb-10 font-inter max-w-3xl mx-auto">Aprende las estrategias más efectivas para cerrar propiedades más rápido y generar confianza con tus clientes.</p>
+    <a href="#formulario" class="inline-block bg-white hover:bg-gray-100 text-[#08407C] font-bold text-xl py-4 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 border-2 border-white">Inscribite acá sin cargo</a>
   </div>
 </section>
 
-<!-- Countdown -->
+<!-- Countdown con fondo blanco y números grandes -->
 <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-900 mb-10 font-inter">⏰ ¡Quedan solo:</h2>
-    <div class="flex flex-wrap justify-center gap-8 text-4xl font-bold text-gray-800 font-inter">
-      <div class="flex flex-col items-center min-w-[100px]"><span class="text-5xl">{days}</span><span class="text-base font-normal mt-2">días</span></div>
-      <div class="flex flex-col items-center min-w-[100px]"><span class="text-5xl">{hours}</span><span class="text-base font-normal mt-2">horas</span></div>
-      <div class="flex flex-col items-center min-w-[100px]"><span class="text-5xl">{minutes}</span><span class="text-base font-normal mt-2">minutos</span></div>
-      <div class="flex flex-col items-center min-w-[100px]"><span class="text-5xl">{seconds}</span><span class="text-base font-normal mt-2">segundos</span></div>
+    <h2 class="text-4xl font-bold text-gray-900 mb-10 font-inter">⏰ ¡Quedan solo:</h2>
+    <div class="flex flex-wrap justify-center gap-10 text-6xl font-bold text-[#08407C] font-inter"> <!-- Agrandado a text-6xl -->
+      <div class="flex flex-col items-center min-w-[120px]">
+        <span class="text-7xl">{days}</span> <!-- Agrandado aún más -->
+        <span class="text-lg font-normal mt-2 text-gray-600">días</span>
+      </div>
+      <div class="flex flex-col items-center min-w-[120px]">
+        <span class="text-7xl">{hours}</span>
+        <span class="text-lg font-normal mt-2 text-gray-600">horas</span>
+      </div>
+      <div class="flex flex-col items-center min-w-[120px]">
+        <span class="text-7xl">{minutes}</span>
+        <span class="text-lg font-normal mt-2 text-gray-600">minutos</span>
+      </div>
+      <div class="flex flex-col items-center min-w-[120px]">
+        <span class="text-7xl">{seconds}</span>
+        <span class="text-lg font-normal mt-2 text-gray-600">segundos</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Formulario de inscripción -->
-<section id="formulario" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+<!-- Formulario de inscripción con fondo azul claro -->
+<section id="formulario" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#f0f4f8]"> <!-- Fondo azul claro -->
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 text-center font-inter">📝 Completá el formulario para reservar tu lugar</h2>
+    <h2 class="text-4xl font-bold mb-10 text-center font-inter text-gray-900">Completá el formulario para reservar tu lugar</h2>
     <form on:submit|preventDefault={handleForm} class="space-y-8 bg-white p-8 rounded-xl shadow-md">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label for="nombre" class="block text-lg font-medium text-gray-700">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required class="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
+          <input type="text" id="nombre" name="nombre" required class="mt-2 block w-full border-2 border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
         </div>
         <div>
           <label for="apellido" class="block text-lg font-medium text-gray-700">Apellido</label>
-          <input type="text" id="apellido" name="apellido" required class="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
+          <input type="text" id="apellido" name="apellido" required class="mt-2 block w-full border-2 border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label for="email" class="block text-lg font-medium text-gray-700">Email</label>
-          <input type="email" id="email" name="email" required class="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
+          <input type="email" id="email" name="email" required class="mt-2 block w-full border-2 border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
         </div>
         <div>
           <label for="telefono" class="block text-lg font-medium text-gray-700">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" required class="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
+          <input type="tel" id="telefono" name="telefono" required class="mt-2 block w-full border-2 border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg">
         </div>
       </div>
       <div>
         <label for="comentario" class="block text-lg font-medium text-gray-700">Comentario</label>
-        <textarea id="comentario" name="comentario" rows="4" class="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg"></textarea>
+        <textarea id="comentario" name="comentario" rows="4" class="mt-2 block w-full border-2 border-gray-300 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#08407C] focus:border-[#08407C] text-lg"></textarea>
       </div>
       <div>
-        <button type="submit" class="w-full bg-[#08407C] hover:bg-[#396696] text-white font-bold text-xl py-4 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">Enviar inscripción</button>
+        <button type="submit" class="w-full bg-white hover:bg-gray-100 text-[#08407C] font-bold text-xl py-4 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 border-2 border-[#08407C]">Enviar inscripción</button> <!-- Botón con borde -->
       </div>
     </form>
   </div>
