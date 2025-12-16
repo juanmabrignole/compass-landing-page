@@ -67,7 +67,6 @@
   </div>
 </section>
 
-<<<<<<< HEAD
 <!-- Video de Marcelo invitando a la Masterclass -->
 <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
   <div class="max-w-4xl mx-auto">
@@ -83,7 +82,7 @@
         <source src="/Masterclasslanding.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
       </video>
-=======
+      
 <!-- Countdown con fondo blanco y números grandes -->
 <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
   <div class="max-w-4xl mx-auto text-center">
