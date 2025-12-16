@@ -85,31 +85,6 @@
       </div>
 </section>
 
-<!-- Countdown con fondo blanco y números grandes -->
-<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-gray-900 mb-10 font-inter">⏰ ¡Quedan solo:</h2>
-    <div class="flex flex-wrap justify-center gap-10 text-6xl font-bold text-[#08407C] font-inter"> <!-- Agrandado a text-6xl -->
-      <div class="flex flex-col items-center min-w-[120px]">
-        <span class="text-7xl">{days}</span> <!-- Agrandado aún más -->
-        <span class="text-lg font-normal mt-2 text-gray-600">días</span>
-      </div>
-      <div class="flex flex-col items-center min-w-[120px]">
-        <span class="text-7xl">{hours}</span>
-        <span class="text-lg font-normal mt-2 text-gray-600">horas</span>
-      </div>
-      <div class="flex flex-col items-center min-w-[120px]">
-        <span class="text-7xl">{minutes}</span>
-        <span class="text-lg font-normal mt-2 text-gray-600">minutos</span>
-      </div>
-      <div class="flex flex-col items-center min-w-[120px]">
-        <span class="text-7xl">{seconds}</span>
-        <span class="text-lg font-normal mt-2 text-gray-600">segundos</span>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- Countdown con fondo blanco y números grandes -->
 <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
