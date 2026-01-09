@@ -41,7 +41,7 @@
     const body = JSON.stringify(Object.fromEntries(form));
 
     try {
-      const res = await fetch('https://n8n-krak.com/webhook/newsletter', {
+      const res = await fetch('https://n8n-krak.com/webhook/workshop-newsletter', {
         method: 'POST',
         body,
       });
