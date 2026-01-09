@@ -35,28 +35,38 @@
 
   onDestroy(() => clearInterval(countdownFunction));
 
+  // Manejo del formulario
   async function handleForm(e) {
-    e.preventDefault();
-    const form = new FormData(e.target);
-    const body = JSON.stringify(Object.fromEntries(form));
+  e.preventDefault();
 
-    try {
-      const res = await fetch('https://n8n-krak.com/webhook/workshop-newsletter', {
-        method: 'POST',
-        body,
-      });
+  const formEl = e.currentTarget;
+  const form = new FormData(formEl);
 
-      if (res.ok) {
-        alert('Gracias por inscribirte!');
-        e.target.reset();
-      } else {
-        alert('Hubo un error. Por favor, intentá nuevamente.');
-      }
-    } catch (error) {
-      console.error(error);
+  // opcional: agregamos metadata útil
+  form.append('source', 'agentes.krak.com.ar');
+  form.append('ts', new Date().toISOString());
+
+  try {
+    const res = await fetch('https://n8n-krak.com/webhook/workshop-newsletter', {
+      method: 'POST',
+      body: form, // <- FormData, SIN headers
+    });
+
+    if (!res.ok) {
+      const msg = await res.text().catch(() => '');
+      console.error('Webhook error:', res.status, msg);
       alert('Hubo un error. Por favor, intentá nuevamente.');
+      return;
     }
+
+    alert('Gracias por inscribirte!');
+    formEl.reset();
+  } catch (error) {
+    console.error(error);
+    alert('Hubo un error. Por favor, intentá nuevamente.');
   }
+}
+
 </script>
 
 <svelte:head>
