@@ -7,7 +7,7 @@
   let minutes = '00';
   let seconds = '00';
 
-  const countDownDate = new Date('Jan 15, 2026 00:00:00').getTime();
+  const countDownDate = new Date('Feb 12, 2026 00:00:00').getTime();
 
   const countdownFunction = setInterval(() => {
     const now = new Date().getTime();
