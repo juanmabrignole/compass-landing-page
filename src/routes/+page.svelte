@@ -1,7 +1,7 @@
 <script>
   import { onDestroy } from 'svelte';
 
-  // Countdown hacia el 15 de enero de 2026
+  // Countdown hacia el 12 de febrero de 2026
   let days = '00';
   let hours = '00';
   let minutes = '00';
