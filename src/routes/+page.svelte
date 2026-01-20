@@ -488,7 +488,7 @@ FOOTER (logo + links + sociales)
     <div>
       <!-- ✅ LOGO BLANCO en footer (fondo oscuro) -->
       <img
-        src="/BLANCO-COMPASS.png"
+        src="/logo_compass.svg"
         alt="Compass"
         class="h-7 sm:h-8 w-auto object-contain"
       />
