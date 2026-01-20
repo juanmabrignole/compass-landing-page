@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./styles/global.css";
+
+
 .grecaptcha-badge { 
     visibility: hidden !important;
 }
