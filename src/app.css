@@ -2,118 +2,135 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./styles/global.css";
+/* ======================================================
+   COMPASS — Brand tokens (manual v1)
+   Base: neutros + acentos moderados
+====================================================== */
+:root{
+  /* Neutrals */
+  --c-bg: #F8F8F8;        /* Blanco */
+  --c-ink: #2C2C2C;       /* Negro azabache */
+  --c-ink-2: #3F3F3F;     /* Ónix */
+  --c-muted: #9F9F9F;     /* Tint 50% */
 
+  /* Accents */
+  --c-marine: #03BCAA;    /* Verde Marino */
+  --c-sand: #FF8800;      /* Arena */
 
-.grecaptcha-badge { 
-    visibility: hidden !important;
+  /* UI */
+  --c-card: rgba(255,255,255,.55);
+  --c-card-2: rgba(255,255,255,.25);
+  --c-border: rgba(44,44,44,.14);
+  --c-shadow: 0 10px 30px rgba(44,44,44,.10);
+}
+
+.grecaptcha-badge {
+  visibility: hidden !important;
 }
 
 @layer base {
-	html {
-		@apply scroll-smooth
-	}
-	@font-face {
-		font-family: 'Inter';
-		src: url('/fonts/Inter-Black.woff2') format('woff2');
-		font-weight: 900;
-		font-style: normal;
-		font-display: swap;
-	}
-	
-	@font-face {
-		font-family: 'Inter';
-		src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
-	
-	@font-face {
-		font-family: 'Inter';
-		src: url('/fonts/Inter-Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
-	
-	@font-face {
-		font-family: 'Inter';
-		src: url('/fonts/Inter-Medium.woff2') format('woff2');
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
-	}
-	
-	@font-face {
-		font-family: 'Inter';
-		src: url('/fonts/Inter-Regular.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
-		
-    @font-face {
-		font-family: 'Montserrat';
-		src: url('/fonts/Montserrat-Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
+  html {
+    @apply scroll-smooth;
+  }
 
-	@font-face {
-		font-family: 'Montserrat';
-		src: url('/fonts/Montserrat-Light.woff2') format('woff2');
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-	}
+  body {
+    margin: 0;
+    background: var(--c-bg);
+    color: var(--c-ink);
+    /* Manual: Helvetica Neue (principal), Roboto (secundaria) */
+    font-family: "Helvetica Neue", Helvetica, Arial, "Roboto", system-ui, -apple-system, Segoe UI, sans-serif;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-	@font-face {
-		font-family: 'Montserrat';
-		src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-	@font-face {
-		font-family: 'Montserrat';
-		src: url('/fonts/Montserrat-SemiBold.woff2') format('woff2');
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
+  ::selection{
+    background: color-mix(in srgb, var(--c-marine) 35%, transparent);
+  }
 
-	@font-face {
-		font-family: 'Roboto Mono';
-		src: url('/fonts/RobotoMono-Light.woff2') format('woff2');
-		font-weight: 300;
-		font-style: normal;
+  /* (Opcional) Si mañana sumás Roboto/Helvetica en archivos,
+     acá podés declarar @font-face. Por ahora, fallback OK. */
+}
 
-		font-display: swap;
-	}
-	@font-face {
-		font-family: 'Roboto Mono';
-		src: url('/fonts/RobotoMono-SemiBold.woff2') format('woff2');
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-	}
+/* ======================================================
+   COMPONENTS
+   helpers para consistencia Compass
+====================================================== */
+@layer components {
+  .compass-container {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
 
-	@font-face {
-		font-family: 'Roboto Mono';
-		src: url('/fonts/RobotoMono-Regular.woff2') format('woff2');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
+  .compass-card {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: 1.25rem;
+    box-shadow: var(--c-shadow);
+  }
 
-	@font-face {
-		font-family: 'Roboto Mono';
-		src: url('/fonts/RobotoMono-Bold.woff2') format('woff2');
-		font-weight: bold;
-		font-style: normal;
-		font-display: swap;
-	}
+  .compass-card-soft {
+    background: var(--c-card-2);
+    border: 1px solid var(--c-border);
+    border-radius: 1.25rem;
+  }
+
+  .compass-h1 {
+    @apply font-extrabold leading-[1.05];
+    letter-spacing: -0.02em;
+  }
+
+  .compass-h2 {
+    @apply font-extrabold;
+    letter-spacing: -0.01em;
+  }
+
+  /* Manual: rótulos en MAYÚSCULAS + tracking 100 */
+  .compass-label {
+    text-transform: uppercase;
+    letter-spacing: 0.10em; /* tracking ~ 100 */
+    font-weight: 600;
+  }
+
+  .compass-btn {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-4 font-bold transition;
+  }
+
+  .compass-btn-primary {
+    background: var(--c-marine);
+    color: white;
+  }
+  .compass-btn-primary:hover {
+    filter: brightness(0.96);
+  }
+
+  .compass-btn-ghost {
+    background: rgba(255,255,255,.35);
+    border: 1px solid var(--c-border);
+    color: var(--c-ink);
+  }
+  .compass-btn-ghost:hover {
+    background: rgba(255,255,255,.5);
+  }
+
+  .compass-chip {
+    border: 1px solid color-mix(in srgb, var(--c-marine) 35%, transparent);
+    background: color-mix(in srgb, var(--c-marine) 12%, transparent);
+    border-radius: 999px;
+    padding: .25rem .75rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+  }
+
+  .compass-link {
+    color: var(--c-ink);
+  }
+  .compass-link:hover {
+    color: var(--c-ink-2);
+  }
 }
