@@ -140,7 +140,6 @@ Requiere /static/hero.jpg (mañana reemplazás)
 ============================= -->
 <section class="relative min-h-[82vh] flex flex-col">
   <div class="absolute inset-0">
-    <img src="/hero.jpg" alt="Compass" class="h-full w-full object-cover" />
     <div class="absolute inset-0 bg-black/35"></div>
     <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/70 to-transparent"></div>
   </div>
