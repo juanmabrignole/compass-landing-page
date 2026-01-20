@@ -4,7 +4,6 @@
   // Arquitectura de información como el prototipo
   const nav = [
     { href: "#trayectoria", label: "TRAYECTORIA" },
-    { href: "#nosotros", label: "NOSOTROS" },
     { href: "#casos", label: "CASOS DE ÉXITO" },
     { href: "#contacto", label: "CONTACTANOS" }
   ];
@@ -17,43 +16,12 @@
     { title: "Proyecto B", subtitle: "Descripción breve del emprendimiento.", badge: "Pronto" }
   ];
 
-  // Carruseles (placeholder)
-  let nosotrosIndex = 0;
-  const nosotros = [
-    {
-      name: "Nombre Apellido",
-      role: "Rol / Perfil",
-      bio:
-        "Breve descripción del integrante. Mañana reemplazamos por el texto real del prototipo / cliente.",
-      imgAlt: "Integrante Compass"
-    },
-    {
-      name: "Nombre Apellido",
-      role: "Rol / Perfil",
-      bio: "Breve descripción del integrante. Mañana reemplazamos por el texto real del prototipo / cliente.",
-      imgAlt: "Integrante Compass"
-    },
-    {
-      name: "Nombre Apellido",
-      role: "Rol / Perfil",
-      bio: "Breve descripción del integrante. Mañana reemplazamos por el texto real del prototipo / cliente.",
-      imgAlt: "Integrante Compass"
-    }
-  ];
-
   let casosIndex = 0;
   const casos = [
     { title: "Caso de Éxito 1", subtitle: "Resumen breve del caso. (placeholder)", metric: "Impacto / Resultado" },
     { title: "Caso de Éxito 2", subtitle: "Resumen breve del caso. (placeholder)", metric: "Impacto / Resultado" },
     { title: "Caso de Éxito 3", subtitle: "Resumen breve del caso. (placeholder)", metric: "Impacto / Resultado" }
   ];
-
-  function prevNosotros() {
-    nosotrosIndex = (nosotrosIndex - 1 + nosotros.length) % nosotros.length;
-  }
-  function nextNosotros() {
-    nosotrosIndex = (nosotrosIndex + 1) % nosotros.length;
-  }
 
   function prevCasos() {
     casosIndex = (casosIndex - 1 + casos.length) % casos.length;
@@ -236,76 +204,14 @@ TRAYECTORIA (oscuro + 2 cards con acento)
 </section>
 
 <!-- =============================
-NOSOTROS (carrusel simple con chevrons + íconos)
-============================= -->
-<section id="nosotros" class="bg-[#d8c8ad]">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-    <div class="flex items-center justify-between gap-4">
-      <h2 class="text-3xl sm:text-4xl font-extrabold">Nosotros</h2>
-
-      <div class="flex items-center gap-2">
-        <button
-          type="button"
-          on:click={prevNosotros}
-          class="h-11 w-11 rounded-full border border-black/20 bg-white/25 hover:bg-white/35 flex items-center justify-center"
-          aria-label="Anterior"
-        >
-          {@html IconChevronLeft}
-        </button>
-        <button
-          type="button"
-          on:click={nextNosotros}
-          class="h-11 w-11 rounded-full border border-black/20 bg-white/25 hover:bg-white/35 flex items-center justify-center"
-          aria-label="Siguiente"
-        >
-          {@html IconChevronRight}
-        </button>
-      </div>
-    </div>
-
-    <div class="mt-8 rounded-3xl border border-black/15 bg-white/25 overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <div class="relative aspect-[4/3] md:aspect-auto md:min-h-[360px] bg-white/20 flex items-center justify-center">
-          <div
-            class="absolute inset-0 opacity-60"
-            style="background:
-              linear-gradient(135deg, rgba(0,0,0,.10), transparent 60%),
-              repeating-linear-gradient(45deg, rgba(0,0,0,.07) 0 12px, rgba(255,255,255,.07) 12px 24px);"
-          ></div>
-          <span class="relative z-10 text-xs tracking-[.2em] uppercase opacity-80">Foto (mañana)</span>
-        </div>
-
-        <div class="p-6 sm:p-10">
-          <p class="text-sm font-extrabold tracking-[.18em] opacity-80">{nosotros[nosotrosIndex].role}</p>
-          <h3 class="mt-2 text-2xl font-extrabold">{nosotros[nosotrosIndex].name}</h3>
-          <p class="mt-4 opacity-80 leading-relaxed">{nosotros[nosotrosIndex].bio}</p>
-
-          <div class="mt-8 flex items-center gap-4">
-            <a href="#" aria-label="LinkedIn" class="h-10 w-10 rounded-full border border-black/15 bg-white/30 hover:bg-white/40 flex items-center justify-center">
-              {@html IconLinkedIn}
-            </a>
-            <a href="#" aria-label="Instagram" class="h-10 w-10 rounded-full border border-black/15 bg-white/30 hover:bg-white/40 flex items-center justify-center">
-              {@html IconInstagram}
-            </a>
-            <a href="#" aria-label="Facebook" class="h-10 w-10 rounded-full border border-black/15 bg-white/30 hover:bg-white/40 flex items-center justify-center">
-              {@html IconFacebook}
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =============================
 CASOS DE ÉXITO (carrusel simple)
 ============================= -->
 <section id="casos" class="bg-[#d8c8ad]">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
     <div class="flex items-center justify-between gap-4">
       <h2 class="text-3xl sm:text-4xl font-extrabold">Casos de éxito</h2>
 
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-3">
         <button
           type="button"
           on:click={prevCasos}
@@ -501,7 +407,6 @@ FOOTER (logo + links + sociales)
       <p class="font-extrabold tracking-[.18em]">SECCIONES</p>
       <div class="mt-4 flex flex-col gap-2 text-white/80 font-semibold">
         <a class="hover:text-white" href="#trayectoria">Trayectoria</a>
-        <a class="hover:text-white" href="#nosotros">Nosotros</a>
         <a class="hover:text-white" href="#casos">Casos de éxito</a>
         <a class="hover:text-white" href="#contacto">Contacto</a>
       </div>
