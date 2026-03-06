@@ -3,9 +3,6 @@
 
   const BRAND = "COMPASS";
 
-  // =============================
-  // NAV
-  // =============================
   const nav = [
     { href: "#trayectoria", label: "TRAYECTORIA" },
     { href: "#como-trabajamos", label: "CÓMO TRABAJAMOS" },
@@ -14,40 +11,28 @@
     { href: "#contacto", label: "CONTACTO" }
   ];
 
-  // =============================
-  // HERO (usamos la imagen horizontal que tenés en /compass-chauvin/)
-  // =============================
-  const HERO_IMG = "/compass-chauvin/compass-chauvin-frente04.jpg";
+  // HERO — foto aérea de Mar del Plata, Playa Varese (Fermin Rodriguez Penelas, Unsplash)
+  const HERO_IMG = "https://images.pexels.com/photos/26919251/pexels-photo-26919251.jpeg?auto=compress&cs=tinysrgb&w=1920";
 
-  // =============================
-  // “CÓMO TRABAJAMOS”
-  // =============================
   const pilares = [
     {
       title: "Buena ubicación",
-      text:
-        "Elegimos zonas con valor real: entorno, accesos y calidad de vida, pensando en cómo se vive y cómo se proyecta."
+      text: "Elegimos zonas con valor real: entorno, accesos y calidad de vida, pensando en cómo se vive y cómo se proyecta."
     },
     {
       title: "Diseño honesto",
-      text:
-        "Arquitectura clara, funcional y luminosa. Materiales y terminaciones que sostienen el estándar en el tiempo."
+      text: "Arquitectura clara, funcional y luminosa. Materiales y terminaciones que sostienen el estándar en el tiempo."
     },
     {
       title: "Planificación responsable",
-      text:
-        "Obra ordenada y previsión. Construir desde el pozo requiere método, control y una gestión seria."
+      text: "Obra ordenada y previsión. Construir desde el pozo requiere método, control y una gestión seria."
     },
     {
       title: "Ejecución cuidada",
-      text:
-        "Supervisión y detalle en cada etapa. Nuestro compromiso es entregar cada unidad como si fuera propia."
+      text: "Supervisión y detalle en cada etapa. Nuestro compromiso es entregar cada unidad como si fuera propia."
     }
   ];
 
-  // =============================
-  // BROCHURES (URLs encodeadas por espacios)
-  // =============================
   const BROCHURES = {
     norte: "/brochures/Compass%203.pdf",
     chauvin: "/brochures/Compass%20Chauvin.pdf",
@@ -55,12 +40,6 @@
     guemes: "/brochures/Brochure%20digital%20-%20Compass%20Guemes.pdf"
   };
 
-  // =============================
-  // DESARROLLOS (4 reales)
-  // Notas:
-  // - Norte usa /compass-3/page-xx.webp (export de PDF)
-  // - Plaza tiene un jpeg con espacios → URL encodeada
-  // =============================
   type Dev = {
     id: "norte" | "plaza" | "chauvin" | "guemes";
     title: string;
@@ -81,8 +60,7 @@
       title: "Compass Norte",
       status: "Finalizado",
       badge: "2022 · Totalmente vendido",
-      subtitle:
-        "Edificio de 4 departamentos en piso completo (125 m²), cochera y baulera. Barrio Constitución, a 2 cuadras de la playa, vista al mar. SUM con parrilla.",
+      subtitle: "Edificio de 4 departamentos en piso completo (125 m²), cochera y baulera. Barrio Constitución, a 2 cuadras de la playa, vista al mar. SUM con parrilla.",
       cover: "/compass-3/page-01.webp",
       gallery: [
         "/compass-3/page-01.webp",
@@ -98,19 +76,16 @@
       title: "Compass Plaza",
       status: "Finalizado",
       badge: "Edificio de 8 pisos",
-      subtitle:
-        "Semipisos luminosos de 2 y 3 ambientes y una unidad de 4 ambientes en el último nivel. Balcones al frente y contrafrente. Cochera y baulera. PB: SUM con parrilla.",
+      subtitle: "Semipisos luminosos de 2 y 3 ambientes y una unidad de 4 ambientes en el último nivel. Balcones al frente y contrafrente. Cochera y baulera. PB: SUM con parrilla.",
       cover: PLAZA_IMG,
       gallery: [PLAZA_IMG]
-      // (si te pasan brochure de Plaza, lo sumamos acá)
     },
     {
       id: "chauvin",
       title: "Compass Chauvin",
       status: "En desarrollo",
       badge: "Entrega 10/2026",
-      subtitle:
-        "28 unidades en 7 pisos. 2 ambientes (67 m²), dos al frente y dos al contrafrente por nivel. Cochera y baulera. PB: SUM con parrilla.",
+      subtitle: "28 unidades en 7 pisos. 2 ambientes (67 m²), dos al frente y dos al contrafrente por nivel. Cochera y baulera. PB: SUM con parrilla.",
       cover: "/compass-chauvin/compass-chauvin-frente04.jpg",
       gallery: [
         "/compass-chauvin/compass-chauvin-frente04.jpg",
@@ -128,8 +103,7 @@
       title: "Compass Güemes",
       status: "En desarrollo",
       badge: "Entrega 02/2028",
-      subtitle:
-        "Proyecto de 5 pisos, a pasos del centro comercial Güemes. Semipisos de 2 y 3 ambientes (64 m² y 104 m²). Balcón aterrazado con parrilla. Cochera y baulera.",
+      subtitle: "Proyecto de 5 pisos, a pasos del centro comercial Güemes. Semipisos de 2 y 3 ambientes (64 m² y 104 m²). Balcón aterrazado con parrilla. Cochera y baulera.",
       cover: "/compass-guemes/compass-guemes-frente02.jpg",
       gallery: [
         "/compass-guemes/compass-guemes-frente02.jpg",
@@ -142,9 +116,6 @@
     }
   ];
 
-  // =============================
-  // MODAL / GALERÍA
-  // =============================
   let active: Dev | null = null;
   let imgIndex = 0;
 
@@ -177,14 +148,10 @@
     return () => window.removeEventListener("keydown", onKey);
   });
 
-  // =============================
-  // FORM (n8n)
-  // =============================
   let nombre = "";
   let correo = "";
   let telefono = "";
   let mensaje = "";
-
   let loading = false;
   let ok = false;
   let error = "";
@@ -197,8 +164,7 @@
     error = "";
 
     if (!webhook) {
-      error =
-        "Todavía no está configurado el webhook (VITE_N8N_WEBHOOK_URL). Lo conectamos cuando el front esté OK.";
+      error = "Todavía no está configurado el webhook (VITE_N8N_WEBHOOK_URL). Lo conectamos cuando el front esté OK.";
       return;
     }
 
@@ -231,9 +197,6 @@
     }
   }
 
-  // =============================
-  // ICONS
-  // =============================
   const IconChevronLeft = `<svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const IconChevronRight = `<svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
   const IconArrowDown = `<svg viewBox="0 0 24 24" fill="none" class="h-6 w-6"><path d="M12 5v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 13l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -243,15 +206,10 @@
 
 <svelte:head>
   <title>Compass</title>
-  <meta
-    name="description"
-    content="Compass — desarrollamos edificios de pozo en Mar del Plata con ubicación, diseño honesto, planificación responsable y ejecución cuidada."
-  />
+  <meta name="description" content="Compass — desarrollamos edificios de pozo en Mar del Plata con ubicación, diseño honesto, planificación responsable y ejecución cuidada." />
 </svelte:head>
 
-<!-- =============================
-HERO
-============================= -->
+<!-- HERO -->
 <section class="relative min-h-[82vh] flex flex-col" style="background: var(--c-ink);">
   <div class="absolute inset-0">
     <img
@@ -269,7 +227,8 @@ HERO
   <div class="relative z-10">
     <div class="compass-container pt-6">
       <header class="flex items-center justify-between gap-4">
-        <a href="#" aria-label="Compass" class="inline-flex items-center">
+        <!-- ✅ fix: href="/" en lugar de href="#" -->
+        <a href="/" aria-label="Compass" class="inline-flex items-center">
           <img
             src="/logo_compass.svg"
             alt="Compass"
@@ -283,12 +242,8 @@ HERO
             <a class="hover:text-white" href={item.href}>{item.label}</a>
           {/each}
         </nav>
-
-        <a
-          href="#contacto"
-          class="rounded-full bg-white/10 hover:bg-white/15 text-white text-xs font-extrabold tracking-[.18em] px-4 py-2 border border-white/20"
-        >
-          CONTACTO
+        <a href="#contacto" class="rounded-full bg-white/10 hover:bg-white/15 text-white text-xs font-extrabold tracking-[.18em] px-4 py-2 border border-white/20" > 
+        CONTACTO
         </a>
       </header>
     </div>
@@ -311,21 +266,16 @@ HERO
         <a href="#desarrollos" class="compass-btn compass-btn-primary">
           VER DESARROLLOS
         </a>
-        <a
-          href="#material"
-          class="compass-btn compass-btn-ghost"
-          style="border-color: rgba(255,255,255,.25); color: white; background: rgba(255,255,255,.08);"
-        >
+        
+          <a href="#material" class="compass-btn compass-btn-ghost"
+          style="border-color: rgba(255,255,255,.25); color: white; background: rgba(255,255,255,.08);">
           VER MATERIAL
-        </a>
+          </a>
       </div>
 
       <div class="mt-10 flex justify-center text-white/85">
-        <a
-          href="#trayectoria"
-          aria-label="Bajar"
-          class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 hover:bg-white/15 h-12 w-12"
-        >
+        
+          <a href="#trayectoria" aria-label="Bajar" class="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 hover:bg-white/15 h-12 w-12">
           {@html IconArrowDown}
         </a>
       </div>
@@ -333,9 +283,7 @@ HERO
   </div>
 </section>
 
-<!-- =============================
-TRAYECTORIA (grafito)
-============================= -->
+<!-- TRAYECTORIA -->
 <section id="trayectoria" style="background: var(--c-ink); color: white;">
   <div class="compass-container py-16 sm:py-20 text-center">
     <h2 class="text-3xl sm:text-4xl font-extrabold">Trayectoria y experiencia</h2>
@@ -366,9 +314,7 @@ TRAYECTORIA (grafito)
   </div>
 </section>
 
-<!-- =============================
-CÓMO TRABAJAMOS (hormigón)
-============================= -->
+<!-- CÓMO TRABAJAMOS -->
 <section id="como-trabajamos" style="background: var(--c-concrete); color: var(--c-ink);">
   <div class="compass-container py-16 sm:py-20">
     <div class="flex items-end justify-between gap-4">
@@ -388,9 +334,7 @@ CÓMO TRABAJAMOS (hormigón)
   </div>
 </section>
 
-<!-- =============================
-DESARROLLOS (crema)
-============================= -->
+<!-- DESARROLLOS -->
 <section id="desarrollos" style="background: var(--c-bg); color: var(--c-ink);">
   <div class="compass-container py-16 sm:py-20">
     <h2 class="text-3xl sm:text-4xl font-extrabold">Desarrollos</h2>
@@ -444,12 +388,11 @@ DESARROLLOS (crema)
               </button>
 
               {#if d.brochure}
-                <a
-                  href={d.brochure}
+                
+                  <a href={d.brochure}
                   target="_blank"
                   rel="noopener"
-                  class="compass-btn compass-btn-ghost"
-                >
+                  class="compass-btn compass-btn-ghost" >
                   BROCHURE
                 </a>
               {/if}
@@ -467,9 +410,7 @@ DESARROLLOS (crema)
   </div>
 </section>
 
-<!-- =============================
-MATERIAL
-============================= -->
+<!-- MATERIAL -->
 <section id="material" style="background: var(--c-concrete); color: var(--c-ink);">
   <div class="compass-container py-16 sm:py-20">
     <h2 class="text-3xl sm:text-4xl font-extrabold">Material</h2>
@@ -494,35 +435,27 @@ MATERIAL
       </div>
 
       <div class="compass-card p-6 sm:p-8">
-        <h3 class="text-lg font-extrabold">Carpeta Drive</h3>
+        <h3 class="text-lg font-extrabold">¿Te interesa algún desarrollo?</h3>
         <p class="mt-3 text-sm opacity-80 leading-relaxed">
-          Acceso al material completo (brochures, renders e información).
+          Consultá disponibilidad y valores actualizados. Respondemos a la brevedad.
         </p>
 
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://drive.google.com/drive/folders/11QXscAD6hLAVKvpd3bRYXV0lXvSyVSmO?usp=sharing"
-            target="_blank"
-            rel="noopener"
-            class="compass-btn compass-btn-ghost"
-          >
-            ABRIR DRIVE
-          </a>
-          <a href="#contacto" class="compass-btn compass-btn-primary">PEDIR INFO</a>
+        <!-- ✅ Refactor: eliminado botón ABRIR DRIVE, se canaliza todo por contacto -->
+        <div class="mt-6">
+          <a href="#contacto" class="compass-btn compass-btn-primary w-full text-center">PEDIR INFO</a>
         </div>
+
         <div class="mt-8 rounded-2xl p-4" style="background: rgba(0,0,0,.04); border: 1px solid var(--c-border);">
           <p class="text-sm opacity-80">
             Consultá disponibilidad y valores actualizados. Respondemos a la brevedad.
           </p>
-        </div> 
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============================
-CONTACTO
-============================= -->
+<!-- CONTACTO -->
 <section id="contacto" style="background: var(--c-bg); color: var(--c-ink);">
   <div class="compass-container py-16 sm:py-20">
     <h2 class="text-3xl sm:text-4xl font-extrabold">Contactate con nosotros</h2>
@@ -562,7 +495,11 @@ CONTACTO
           bind:value={mensaje}
         ></textarea>
 
-        <button class="w-full rounded-xl py-3 font-extrabold text-white shadow disabled:opacity-60" style="background: var(--c-marine);" disabled={loading}>
+        <button
+          class="w-full rounded-xl py-3 font-extrabold text-white shadow disabled:opacity-60"
+          style="background: var(--c-marine);"
+          disabled={loading}
+        >
           {loading ? "Enviando..." : "ENVIAR"}
         </button>
 
@@ -581,7 +518,6 @@ CONTACTO
           <span>Ubicación</span>
         </div>
 
-        <!-- ✅ Refactor: dirección + Google Maps embed -->
         <p class="mt-2 opacity-80 text-sm">Las Heras 3207, Mar del Plata, Buenos Aires</p>
 
         <div class="mt-4 overflow-hidden rounded-2xl border" style="border-color: var(--c-border);">
@@ -595,12 +531,11 @@ CONTACTO
         </div>
 
         <div class="mt-4">
-          <a
-            class="compass-btn compass-btn-ghost"
+          
+            <a class="compass-btn compass-btn-ghost"
             target="_blank"
             rel="noopener"
-            href="https://www.google.com/maps/search/?api=1&query=Las%20Heras%203207%2C%20Mar%20del%20Plata%2C%20Buenos%20Aires"
-          >
+            href="https://www.google.com/maps/search/?api=1&query=Las%20Heras%203207%2C%20Mar%20del%20Plata%2C%20Buenos%20Aires">
             ABRIR EN GOOGLE MAPS
           </a>
         </div>
@@ -609,9 +544,7 @@ CONTACTO
   </div>
 </section>
 
-<!-- =============================
-FOOTER
-============================= -->
+<!-- FOOTER -->
 <footer style="background: var(--c-ink); color: white;">
   <div class="compass-container py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
     <div>
@@ -645,9 +578,7 @@ FOOTER
   </div>
 </footer>
 
-<!-- =============================
-MODAL DETALLES
-============================= -->
+<!-- MODAL DETALLES -->
 {#if active}
   <div class="fixed inset-0 z-[999]">
     <button class="absolute inset-0 bg-black/70" on:click={closeDev} aria-label="Cerrar"></button>
@@ -697,8 +628,10 @@ MODAL DETALLES
               </button>
             {/if}
 
-            <div class="absolute left-4 bottom-4 text-xs font-extrabold tracking-[.14em] uppercase px-3 py-2 rounded-full"
-              style="background: rgba(255,255,255,.75); border:1px solid rgba(0,0,0,.08);">
+            <div
+              class="absolute left-4 bottom-4 text-xs font-extrabold tracking-[.14em] uppercase px-3 py-2 rounded-full"
+              style="background: rgba(255,255,255,.75); border:1px solid rgba(0,0,0,.08);"
+            >
               {active.badge}
             </div>
           </div>

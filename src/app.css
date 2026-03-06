@@ -8,14 +8,15 @@
 ====================================================== */
 :root{
   /* Neutrals */
-  --c-bg: #F8F8F8;        /* Blanco */
+  --c-bg: #E2CFA0;        /* Arena — fondo principal (manual v1, pág. 16) */
+  --c-concrete: #ECD9B0;  /* Arena claro — fondo secciones secundarias (agregado: faltaba esta variable) */
   --c-ink: #2C2C2C;       /* Negro azabache */
   --c-ink-2: #3F3F3F;     /* Ónix */
   --c-muted: #9F9F9F;     /* Tint 50% */
 
   /* Accents */
   --c-marine: #03BCAA;    /* Verde Marino */
-  --c-sand: #FF8800;      /* Arena */
+  --c-sand: #E2CFA0;      /* Arena — corregido (manual tenía #FF8800, error tipográfico) */
 
   /* UI */
   --c-card: rgba(255,255,255,.55);
